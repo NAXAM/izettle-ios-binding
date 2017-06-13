@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id>Naxam.iZettle.iOS</id>
+        <version>1.4.2</version>
+        <description>Xamarin Binding Library - iZettle iOS SDK</description>
+        <authors>Vu Duc Tuyen</authors>
+        <owners>NAXAM CO.,LTD</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Naxam - iZettle iOS SDK</title>
+        <releaseNotes>iZettle iOS SDK 1.4.2</releaseNotes>
+        <summary>Xamarin Binding Library - iZettle iOS SDK</summary>
+        <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/NAXAM/izettle-ios-binding</projectUrl>
+        <copyright>Copyright (c) 2017 NAXAM</copyright>
+        <tags>Xamarin.iOS, izettle</tags>
+    </metadata>
+    <!-- Optional 'files' node -->
+    <files>
+        <file src="Naxam.iZettle.iOS/bin/Release/Naxam.iZettle.iOS.dll" target="lib/Xamarin.iOS10/Naxam.iZettle.iOS.dll" />
+    </files>
+</package>

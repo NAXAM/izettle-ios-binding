@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using ObjCRuntime;
 
 namespace iZettle
 {
@@ -26,10 +27,6 @@ namespace iZettle
 		// @property (copy, nonatomic) NSString * _Nullable enforcedUserAccount;
 		[NullAllowed, Export ("enforcedUserAccount")]
 		string EnforcedUserAccount { get; set; }
-
-		// @property (readonly, nonatomic) BOOL hasActiveAccount;
-		[Export ("hasActiveAccount")]
-		bool HasActiveAccount { get; }
 	}
 
 	// @interface Operations (iZettleSDK)
@@ -37,9 +34,9 @@ namespace iZettle
 	[BaseType (typeof(iZettleSDK))]
 	interface iZettleSDK_Operations
 	{
-		// -(void)chargeAmount:(NSDecimalNumber * _Nonnull)amount currency:(NSString * _Nullable)currency reference:(NSString * _Nullable)reference presentFromViewController:(UIViewController * _Nonnull)viewController completion:(iZettleSDKOperationCompletion _Nonnull)completion;
-		[Export ("chargeAmount:currency:reference:presentFromViewController:completion:")]
-		void ChargeAmount (NSDecimalNumber amount, [NullAllowed] string currency, [NullAllowed] string reference, UIViewController viewController, iZettleSDKOperationCompletion completion);
+		// -(void)chargeAmount:(NSDecimalNumber * _Nonnull)amount currency:(NSString * _Nullable)currency enableTipping:(BOOL)enableTipping reference:(NSString * _Nullable)reference presentFromViewController:(UIViewController * _Nonnull)viewController completion:(iZettleSDKOperationCompletion _Nonnull)completion;
+		[Export ("chargeAmount:currency:enableTipping:reference:presentFromViewController:completion:")]
+		void ChargeAmount (NSDecimalNumber amount, [NullAllowed] string currency, bool enableTipping, [NullAllowed] string reference, UIViewController viewController, iZettleSDKOperationCompletion completion);
 
 		// -(void)refundAmount:(NSDecimalNumber * _Nullable)amount ofPaymentWithReference:(NSString * _Nonnull)reference refundReference:(NSString * _Nullable)refundReference presentFromViewController:(UIViewController * _Nonnull)viewController completion:(iZettleSDKOperationCompletion _Nonnull)completion;
 		[Export ("refundAmount:ofPaymentWithReference:refundReference:presentFromViewController:completion:")]
@@ -56,6 +53,16 @@ namespace iZettle
 		// -(void)abortOperation;
 		[Export ("abortOperation")]
 		void AbortOperation ();
+
+		// - (void)chargeAmount:(NSDecimalNumber *)amount
+		//             currency:(nullable NSString *)currency
+		//            reference:(nullable NSString *)reference
+		// presentFromViewController:(UIViewController *)viewController
+		//           completion:(iZettleSDKOperationCompletion)completion
+		// __attribute__((deprecated("Use chargeAmount:currency:enableTipping:reference:presentFromViewController:completion: instead")));
+        [Deprecated(PlatformName.iOS, PlatformArchitecture.All, "Use chargeAmount:currency:enableTipping:reference:presentFromViewController:completion: instead"), 
+         Export ("chargeAmount:currency:reference:presentFromViewController:completion:")]
+		void ChargeAmount (NSDecimalNumber amount, [NullAllowed] string currency, [NullAllowed] string reference, UIViewController presentFromViewController, iZettleSDKOperationCompletion completion);
 	}
 
 	// @interface iZettleSDKPaymentInfo : NSObject

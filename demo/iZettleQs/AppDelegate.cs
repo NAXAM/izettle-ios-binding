@@ -10,6 +10,8 @@ namespace iZettleQs
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
+        const string clientId = @"<client id from developer portal>";
+        const string callbackURL = @"izettle-iZorn://login.callback";
 
         public override UIWindow Window
         {
@@ -21,7 +23,14 @@ namespace iZettleQs
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
-            iZettleSDK.Shared.StartWithAPIKey("{YOUR_KEY_COME_HERE}");
+            NSError error = null;
+            var authorizationProvider = new iZettleSDKAuthorization(
+                clientId,
+                NSUrl.FromString(callbackURL),
+                error,
+                () => AccountManager.Shared.EnforcedUserAccount);
+
+            iZettleSDK.Shared.StartWithAuthorizationProvider(authorizationProvider);
 
             return true;
         }
@@ -55,6 +64,32 @@ namespace iZettleQs
         public override void WillTerminate(UIApplication application)
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
+        }
+
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            iZettleSDK.Shared.ApplicationDidOpenWithURL(url);
+
+            return true;
+        }
+    }
+
+    public class AccountManager
+    {
+        public string EnforcedUserAccount { get; set; }
+
+        private static AccountManager accountManager;
+        public static AccountManager Shared
+        {
+            get
+            {
+                if (accountManager == null)
+                {
+                    accountManager = new AccountManager();
+                }
+
+                return accountManager;
+            }
         }
     }
 }

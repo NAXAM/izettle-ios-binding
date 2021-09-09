@@ -4,3 +4,8 @@ framework module iZettleSDK {
   export *
   module * { export * }
 }
+
+module iZettleSDK.Swift {
+    header "iZettleSDK-Swift.h"
+    requires objc
+}

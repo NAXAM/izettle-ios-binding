@@ -18,10 +18,32 @@ We specialize in developing mobile applications using Xamarin and native technol
 Install-Package Naxam.iZettle.iOS
 ```
 
+## How to upgrade
+The binding library is very hard for the first time and isn't easy to use `sharpie` to upgrade.
+The steps are below
+
+1. Update `Cartfile` with the desired version
+2. Use `carthage update --use-xcframeworks` to build the framework files
+3. Copy compiled frameworks to `framekworks` folder: 
+- Carthage/Checkouts/sdk-ios/iZettleSDK/iZettlePayments.xcframework/ios-arm64_armv7/iZettlePayments.framework
+- Carthage/Checkouts/sdk-ios/iZettleSDK/iZettleSDK.xcframework/ios-arm64_armv7/iZettleSDK.framework
+4. Run `sh create-fat-lib-from-xcf-framework.sh` to create appropriate fat files
+5. Check for git changes of header files and add/remove binding accordingly
+6. Build project `msbuild -c Release izettle-ios.sln`
+7. Run `nuget pack`
+8. Create a PR then I will publish on Nuget.org
+
+**NOTE**: 
+1. If you don't know Carthage. Check it out [here](https://github.com/Carthage/Carthage).
+2. You might use `sharpie` to for step-5 above
+3. Carthage: Actually, it doesn't do any special thing, just help us download frameworks from Github
+
 ## License
 
 iZettle binding library for iOS is released under the MIT license.
 See [LICENSE](./LICENSE) for details.
+
+iZettle library iselft is under iZettle license as specified [here](https://github.com/iZettle/sdk-ios/blob/master/LICENSE).
 
 ## Backers
 Most of our libraries are built with our own effort at very small funding or just side projects.

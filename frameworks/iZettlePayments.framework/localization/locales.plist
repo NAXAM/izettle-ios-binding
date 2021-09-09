@@ -3,52 +3,64 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>en_GB</key>
-		<string>VlkiVvF_jpZ5P47ZlGCFlg</string>
-	</dict>
-	<dict>
-		<key>sv_SE</key>
-		<string>BJOOilz1p29GffrW9kReUQ</string>
-	</dict>
-	<dict>
 		<key>da_DK</key>
-		<string>YsiIRh6jBEXbwJ-KVgQZ_A</string>
-	</dict>
-	<dict>
-		<key>nb_NO</key>
-		<string>jk92qDsfhEVk1mU64nlhOA</string>
-	</dict>
-	<dict>
-		<key>fi_FI</key>
-		<string>FnR9u8G0l8SnQ9uUOJ6byg</string>
-	</dict>
-	<dict>
-		<key>es_ES</key>
-		<string>6-7pF2rRwNS_ID3mwG58BQ</string>
+		<string>K3UTmacOba_AKRcFQMZCCA</string>
 	</dict>
 	<dict>
 		<key>de_DE</key>
-		<string>_LsQH7J7U7u1CL4A7-_pTg</string>
+		<string>oW03b4AIrY-91blMYcPYcQ</string>
 	</dict>
 	<dict>
-		<key>nl_NL</key>
-		<string>fk1nI-phDxnw96qhy9oXRw</string>
+		<key>en_GB</key>
+		<string>kJphpNdNaf8SrITNu0S13A</string>
 	</dict>
 	<dict>
-		<key>pt_BR</key>
-		<string>AADNB3ykUElBYboZXSwsnw</string>
+		<key>en_US</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>es_ES</key>
+		<string>ZRimNNLXln2NcFIAxK6SeQ</string>
 	</dict>
 	<dict>
 		<key>es_MX</key>
-		<string>ERDtn2t5g5_dnwv3L9TeQQ</string>
+		<string>xFa27pykzzQ353pCFn_wIw</string>
+	</dict>
+	<dict>
+		<key>es_US</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>fi_FI</key>
+		<string>ZwNfktw5ALZ41HN3N2FmwQ</string>
 	</dict>
 	<dict>
 		<key>fr_FR</key>
-		<string>vQwwVeZkMpAD2s_MITQryg</string>
+		<string>oY4WZd-OKV6q9Sh609ykKQ</string>
 	</dict>
 	<dict>
 		<key>it_IT</key>
-		<string>E12PNfoPV-geVB479MO6jw</string>
+		<string>_XwzsrHJposIGhiPX6pQTw</string>
+	</dict>
+	<dict>
+		<key>nb_NO</key>
+		<string>f2OKNbfYpcE7gmrK35J61A</string>
+	</dict>
+	<dict>
+		<key>nl_NL</key>
+		<string>B5Bw7-robWVUqeBhwLBSOQ</string>
+	</dict>
+	<dict>
+		<key>pt_BR</key>
+		<string>vSgPd4N5w6HVEypCcevdFg</string>
+	</dict>
+	<dict>
+		<key>sv_FI</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>sv_SE</key>
+		<string>mPmiAmD8iiuLUh7eq08peA</string>
 	</dict>
 </array>
 </plist>

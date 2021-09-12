@@ -29,7 +29,7 @@ The steps are below
 - Carthage/Checkouts/sdk-ios/iZettleSDK/iZettleSDK.xcframework/ios-arm64_armv7/iZettleSDK.framework
 4. Run `sh create-fat-lib-from-xcf-framework.sh` to create appropriate fat files
 5. Check for git changes of header files and add/remove binding accordingly
-6. Build project `msbuild -c Release izettle-ios.sln`
+6. Build project `msbuild izettle-ios.sln /property:Configuration=Release`
 7. Run `nuget pack`
 8. Create a PR then I will publish on Nuget.org
 

@@ -3,18 +3,18 @@
     <metadata>
         <!-- Required elements-->
         <id>Naxam.iZettle.iOS</id>
-        <version>1.7.1</version>
+        <version>3.2.1</version>
         <description>Xamarin.iOS Binding Library - iZettle iOS SDK</description>
         <authors>NAXAM</authors>
         <owners>NAXAM CO.,LTD</owners>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <title>Naxam - iZettle iOS SDK</title>
-        <releaseNotes>iZettle iOS SDK 1.7.1</releaseNotes>
+        <releaseNotes>iZettle iOS SDK 3.2.1</releaseNotes>
         <summary>Xamarin.iOS Binding Library - iZettle iOS SDK</summary>
         <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
         <iconUrl>https://avatars3.githubusercontent.com/u/1272526</iconUrl>
         <projectUrl>https://github.com/NAXAM/izettle-ios-binding</projectUrl>
-        <copyright>Copyright (c) 2017 NAXAM</copyright>
+        <copyright>Copyright (c) 2021 NAXAM</copyright>
         <tags>Xamarin.iOS, izettle</tags>
     </metadata>
     <!-- Optional 'files' node -->

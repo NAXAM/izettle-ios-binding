@@ -44,7 +44,7 @@ namespace iZettleQs
 
             var amount = amountWheel.Amount;
 
-            iZettleSDK.Shared.ChargeAmount(amount, null, _lastReference, this, (iZettleSDKPaymentInfo paymentInfo, NSError error) =>
+            iZettleSDK.Shared.ChargeAmount(amount, false, _lastReference, this, (iZettleSDKPaymentInfo paymentInfo, NSError error) =>
             {
                 _lastPaymentInfo = paymentInfo;
                 _lastError = error;

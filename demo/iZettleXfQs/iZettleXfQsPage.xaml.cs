@@ -14,30 +14,31 @@ namespace iZettleXfQs
 
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
-			var service = DependencyService.Get<IiZettleService>();
+            var service = DependencyService.Get<IiZettleService>();
 
-            await service.ChargeAmountAsync(133, null, Guid.NewGuid().ToString())
+            await service.ChargeAmountAsync(133, "USD", Guid.NewGuid().ToString())
                    .ContinueWith(ChargeFinished).ConfigureAwait(true);
         }
 
         void ChargeFinished(Task<PaymentInfo> task)
         {
-            Device.BeginInvokeOnMainThread(() => {
-				if (task.IsFaulted)
-				{
-					DisplayAlert("ERROR", task.Exception.InnerException?.Message ?? task.Exception.Message, "Ok");
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                if (task.IsFaulted)
+                {
+                    DisplayAlert("ERROR", task.Exception.InnerException?.Message ?? task.Exception.Message, "Ok");
 
-					return;
-				}
+                    return;
+                }
 
-				if (task.IsCanceled)
-				{
-					DisplayAlert("INFO", "Payment is cancelled", "Ok");
+                if (task.IsCanceled)
+                {
+                    DisplayAlert("INFO", "Payment is cancelled", "Ok");
 
-					return;
-				}
+                    return;
+                }
 
-				DisplayAlert("INFO", $"Payment completed: {task.Result.ReferenceNumber}", "Ok");
+                DisplayAlert("INFO", $"Payment completed: {task.Result.ReferenceNumber}", "Ok");
             });
         }
     }

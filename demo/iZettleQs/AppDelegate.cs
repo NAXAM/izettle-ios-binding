@@ -10,8 +10,8 @@ namespace iZettleQs
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
-        const string clientId = @"<client id from developer portal>";
-        const string callbackURL = @"izettle-iZorn://login.callback";
+        const string clientId = @"73xxxxeea-xxx-425d-xxx-236exxxx85b8";
+        const string callbackURL = @"xzettleqs://login.callback";
 
         public override UIWindow Window
         {

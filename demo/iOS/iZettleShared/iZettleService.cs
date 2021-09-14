@@ -7,14 +7,14 @@ using iZettleShared.iOS;
 using UIKit;
 using Xamarin.Forms;
 
-[assembly:Dependency(typeof(iZettleService))]
+[assembly: Dependency(typeof(iZettleService))]
 namespace iZettleShared.iOS
 {
     public class iZettleService : IiZettleService
-	{
-		readonly UIViewController viewController;
+    {
+        readonly UIViewController viewController;
 
-		public iZettleService() 
+        public iZettleService()
         {
             viewController = Acr.Support.iOS.Extensions.GetTopViewController(UIApplication.SharedApplication);
         }
@@ -27,29 +27,34 @@ namespace iZettleShared.iOS
 
             var nativeAmount = new NSDecimalNumber(amount.ToString());
 
-            iZettleSDK.Shared.ChargeAmount(nativeAmount, currency, reference, viewController, (iZettleSDKPaymentInfo paymentInfo, NSError error) =>
-			{
-                if (error != null) {
+            iZettleSDK.Shared.ChargeAmount(nativeAmount, true, reference, viewController, (iZettleSDKPaymentInfo paymentInfo, NSError error) =>
+            {
+                if (error != null)
+                {
                     //TODO Set descriptive exception
                     chargeAmountTcs.TrySetException(new Exception(error.Domain));
                     return;
                 }
 
-                if (paymentInfo == null) {
+                if (paymentInfo == null)
+                {
                     chargeAmountTcs.TrySetCanceled();
                     return;
                 }
 
                 chargeAmountTcs.TrySetResult(paymentInfo.ToPcl());
-			});
+            });
 
             return chargeAmountTcs.Task;
         }
     }
 
-    public static class PaymentInfoExtensions {
-        public static PaymentInfo ToPcl(this iZettleSDKPaymentInfo paymentInfo) {
-            return new PaymentInfo { 
+    public static class PaymentInfoExtensions
+    {
+        public static PaymentInfo ToPcl(this iZettleSDKPaymentInfo paymentInfo)
+        {
+            return new PaymentInfo
+            {
                 AID = paymentInfo.AID,
                 Amount = paymentInfo.Amount.DoubleValue,
                 ApplicationName = paymentInfo.ApplicationName,

@@ -11,8 +11,8 @@ namespace iZettleXfQs.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
-        const string clientId = @"<client id from developer portal>";
-        const string callbackURL = @"izettle-iZorn://login.callback";
+        const string clientId = @"73xxxxeea-xxx-425d-xxx-236exxxx85b8";
+        const string callbackURL = @"xzettleqs://login.callback";
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {

@@ -24,14 +24,11 @@ The steps are below
 
 1. Update `Cartfile` with the desired version
 2. Use `carthage update --use-xcframeworks` to build the framework files
-3. Copy compiled frameworks to `framekworks` folder: 
-- Carthage/Checkouts/sdk-ios/iZettleSDK/iZettlePayments.xcframework/ios-arm64_armv7/iZettlePayments.framework
-- Carthage/Checkouts/sdk-ios/iZettleSDK/iZettleSDK.xcframework/ios-arm64_armv7/iZettleSDK.framework
-4. Run `sh create-fat-lib-from-xcf-framework.sh` to create appropriate fat files
-5. Check for git changes of header files and add/remove binding accordingly
-6. Build project `msbuild izettle-ios.sln /property:Configuration=Release`
-7. Run `nuget pack`
-8. Create a PR then I will publish on Nuget.org
+3. Run `sh create-fat-lib-from-xcf-framework.sh` to create appropriate fat files
+4. Check for git changes of header files and add/remove binding accordingly
+5. Build project `msbuild izettle-ios.sln /property:Configuration=Release`
+6. Run `nuget pack`
+7. Create a PR then I will publish on Nuget.org
 
 **NOTE**: 
 1. If you don't know Carthage. Check it out [here](https://github.com/Carthage/Carthage).

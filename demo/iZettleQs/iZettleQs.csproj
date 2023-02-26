@@ -82,7 +82,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     
-    <PackageReference Include="Xamarin.Swift" Version="1.0.8" />
+    <PackageReference Include="Xamarin.Swift" Version="1.0.11" />
+    <PackageReference Include="Naxam.iZettle.iOS">
+      <Version>3.7.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\Contents.json" />
@@ -122,12 +125,6 @@
     <Compile Include="ConsoleViewController.designer.cs">
       <DependentUpon>ConsoleViewController.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Naxam.iZettle.iOS\Naxam.iZettle.iOS.csproj">
-      <Project>{4C8CA6D8-7CD9-4ACD-ACA7-842F3F05ADFC}</Project>
-      <Name>Naxam.iZettle.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

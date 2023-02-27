@@ -10,9 +10,9 @@
         <SupportedOSPlatformVersion>12.0</SupportedOSPlatformVersion>
         <RootNamespace>iZettle</RootNamespace>
         <AssemblyName>Naxam.iZettle.iOS</AssemblyName>
-        <AssemblyVersion>3.7.0</AssemblyVersion>
-        <FileVersion>3.7.0</FileVersion>
-        <AssemblyInformationalVersion>3.7.0</AssemblyInformationalVersion>
+        <AssemblyVersion>3.7.0.1</AssemblyVersion>
+        <FileVersion>3.7.0.1</FileVersion>
+        <AssemblyInformationalVersion>3.7.0.1</AssemblyInformationalVersion>
         <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
@@ -28,7 +28,7 @@
         <PackageProjectUrl>https://github.com/NAXAM/izettle-ios-binding</PackageProjectUrl>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-        <PackageVersion>3.7.0</PackageVersion>
+        <PackageVersion>3.7.0.1</PackageVersion>
     </PropertyGroup>
     <ItemGroup>
         <Folder Include="Resources\" />

@@ -30,7 +30,7 @@ namespace iZettleQs
                 error,
                 () => AccountManager.Shared.EnforcedUserAccount);
 
-            iZettleSDK.Shared.StartWithAuthorizationProvider(authorizationProvider);
+            iZettleSDK.Shared.StartWithAuthorizationProvider(authorizationProvider, true);
 
             return true;
         }

@@ -153,11 +153,6 @@ namespace iZettle
         [Export("authorizeAccountWithCompletion:")]
         void AuthorizeAccountWithCompletion(Action<iZettleSDKOAuthToken, NSError> completion);
 
-        // - (void)startWithAuthorizationProvider:(id<iZettleSDKAuthorizationProvider>)provider
-        //            enableDeveloperMode:(BOOL)enableDeveloperMode;
-        [Export("authorizeAccountWithCompletion:enableDeveloperMode:")]
-        void AuthorizeAccountWithCompletion(Action<iZettleSDKOAuthToken, NSError> completion, bool enableDeveloperMode);
-
         // - (void)setEnabledAlternativePaymentMethods:(NSArray<NSNumber *> *)enabledAPMs;
         [Export("setEnabledAlternativePaymentMethods:")]
         void SetEnabledAlternativePaymentMethods(NSArray enabledAPMs);
@@ -169,6 +164,11 @@ namespace iZettle
         //- (void) startWithAuthorizationProvider:(id<iZettleSDKAuthorizationProvider>) provider;
         [Export("startWithAuthorizationProvider:")]
         void StartWithAuthorizationProvider(IiZettleSDKAuthorizationProvider provider);
+
+        // - (void)startWithAuthorizationProvider:(id<iZettleSDKAuthorizationProvider>)provider
+        //            enableDeveloperMode:(BOOL)enableDeveloperMode;
+        [Export("startWithAuthorizationProvider:enableDeveloperMode:")]
+        void StartWithAuthorizationProvider(IiZettleSDKAuthorizationProvider provider, bool enableDeveloperMode);
 
         //- (BOOL) applicationDidOpenWithURL:(NSURL*) url NS_DEPRECATED_IOS(9_0, 11_0, "Not needed on newer iOS versions.")
         [Export("applicationDidOpenWithURL:")]

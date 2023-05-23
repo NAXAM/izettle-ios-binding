@@ -262,16 +262,6 @@ namespace iZettle
         // -(void)abortOperation;
         [Export("abortOperation")]
         void AbortOperation();
-
-        // - (void)chargeAmount:(NSDecimalNumber *)amount
-        //             currency:(nullable NSString *)currency
-        //            reference:(nullable NSString *)reference
-        // presentFromViewController:(UIViewController *)viewController
-        //           completion:(iZettleSDKOperationCompletion)completion
-        // __attribute__((deprecated("Use chargeAmount:currency:enableTipping:reference:presentFromViewController:completion: instead")));
-        // [Deprecated(PlatformName.iOS, PlatformArchitecture.All, "Use chargeAmount:currency:enableTipping:reference:presentFromViewController:completion: instead"),
-        [Export("chargeAmount:currency:reference:presentFromViewController:completion:")]
-        void ChargeAmount(NSDecimalNumber amount, [NullAllowed] string currency, [NullAllowed] string reference, UIViewController presentFromViewController, iZettleSDKOperationCompletion completion);
     }
 
     // @interface iZettleSDKPaymentInfo : NSObject

@@ -227,7 +227,7 @@ namespace iZettle
         //                        completion:(IZSDKPayPalQRCCompletion)completion
         // NS_SWIFT_NAME(chargePayPalQRC(amount:reference:appearance:presentFrom:completion:))
         // API_AVAILABLE(ios(13));
-        [Export("chargePayPalQRCWithAmount:reference:appearance:presentedFromViewController:completion:")]
+        [Export("chargePayPalQRCWithAmount:reference:appearance:presentFromViewController:completion:")]
         void ChargePayPalQRCWithAmount(NSDecimalNumber amount, string reference, IZSDKPayPalQRCAppearance appearance, UIViewController presentedFromViewController, IZSDKPayPalQRCCompletion completion);
 
         // - (void)retrievePayPalQRCPaymentInfoForReference:(NSString *)reference
